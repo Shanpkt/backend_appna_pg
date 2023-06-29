@@ -3,6 +3,7 @@ const UserSchema = require("./Schema/User")
 require('dotenv').config();
 
 let cors = require("cors");
+const connectDB = require("./db/db");
 const app=express()
 app.use(express.json());
 app.use(
@@ -13,7 +14,7 @@ app.use(
 
 app.post("/userdata",async function(req,res){
 
-   const userdata=await req.body   //UserSchema.create(req.body)
+   const userdata=await UserSchema.create(req.body)
     return res.send(userdata)
   // console.log(userdata)
     
@@ -22,7 +23,7 @@ app.post("/userdata",async function(req,res){
 })
 
 app.listen(1212,async function(){
-
+    await connectDB()
   console.log("connected")
 })
 
