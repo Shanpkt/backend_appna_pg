@@ -2,7 +2,7 @@
 
 const mongoose=require('mongoose')
 
-const uri="mongodb+srv://shaan:shaan@cluster0.cmbuxv1.mongodb.net/appna_pg?retryWrites=true&w=majority"
+const uri="mongodb+srv://vercel-admin-user:fhNFKulE7Q4bK4UQ@cluster0.chpth.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
                      
 const connectDB=()=>{
 
