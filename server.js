@@ -11,20 +11,18 @@ app.use(
     })
 )
 
+app.post("/userdata",async function(req,res){
 
-app.get("/userdata",async function(req,res){
-
-   // const userdata=await req.body   //UserSchema.create(req.body)
-   // return res.send(userdata)
+   const userdata=await req.body   //UserSchema.create(req.body)
+    return res.send(userdata)
   // console.log(userdata)
     
     return res.send("working fine")
 
 })
 
-
 app.listen(1212,async function(){
 
-  console.log("connected"+process.env.PORT)
-
+  console.log("connected")
 })
+
