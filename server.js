@@ -1,5 +1,6 @@
 const express=require("express")
 const UserSchema = require("./Schema/User")
+require('dotenv').config();
 
 let cors = require("cors");
 const app=express()
@@ -11,19 +12,19 @@ app.use(
 )
 
 
-app.post("/userdata",async function(req,res){
+app.get("/userdata",async function(req,res){
 
-    const userdata=await req.body   //UserSchema.create(req.body)
+   // const userdata=await req.body   //UserSchema.create(req.body)
    // return res.send(userdata)
-   console.log(userdata)
+  // console.log(userdata)
     
     return res.send("working fine")
 
 })
 
 
-app.listen(4004,async function(){
+app.listen(1212,async function(){
 
-  console.log("connected")
+  console.log("connected"+process.env.PORT)
 
 })
