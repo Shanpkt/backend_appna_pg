@@ -25,7 +25,7 @@ app.post("/userdata",async function(req,res){
     // reffrals:[]
     // }
 
-   const userdata=await req.body  //UserSchema.create(data)
+   const userdata=await UserSchema.create(req.body)
     return res.send(userdata)
   // console.log(userdata)
     
