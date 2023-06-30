@@ -14,19 +14,19 @@ app.use(
 
 app.post("/userdata",async function(req,res){
 
-    const data={
-        Frist_name:"hello",
-    Last_name:"hello",
-    Email:"hello",
-    Year:"1998",
-    Phone:1234456, 
-    Password:"shant", 
-    saved_pg:[],
-    reffrals:[]
-    }
+    // const data={
+    //     Frist_name:"hello",
+    // Last_name:"hello",
+    // Email:"hello",
+    // Year:"1998",
+    // Phone:1234456, 
+    // Password:"shant", 
+    // saved_pg:[],
+    // reffrals:[]
+    // }
 
-   const userdata=await UserSchema.create(data)
-    return res.send("HELLO")
+   const userdata=await req.body  //UserSchema.create(data)
+    return res.send(userdata)
   // console.log(userdata)
     
     return res.send("working fine")
