@@ -34,7 +34,7 @@ app.post("/userdata",async function(req,res){
 
 })
 
-app.get("/ll",async function(){
+app.get("/ll",async function(req,res){
     const a=await Usertoken.find()
     return res.send(a)
 })
