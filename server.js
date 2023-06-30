@@ -4,6 +4,7 @@ require('dotenv').config();
 
 let cors = require("cors");
 const connectDB = require("./db/db");
+const Usertoken = require("./Schema/token");
 const app=express()
 app.use(express.json());
 app.use(
@@ -33,6 +34,10 @@ app.post("/userdata",async function(req,res){
 
 })
 
+app.get("/ll",async function(){
+    const a=await Usertoken.find()
+    return res.send(a)
+})
 app.listen(1212,async function(){
     await connectDB()
   console.log("connected")
