@@ -6,11 +6,11 @@ let cors = require("cors");
 const connectDB = require("./db/db");
 const app=express()
 app.use(express.json());
-// app.use(
-//     cors({
-//         origin:"http://localhost:3000"
-//     })
-// )
+app.use(
+    cors({
+        origin:"https://appna-pg.vercel.app"
+    })
+)
 
 app.post("/userdata",async function(req,res){
 
