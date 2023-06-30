@@ -13,7 +13,7 @@ app.use(
     })
 )
 
-app.post("/userdata",async function(req,res){
+app.get("/userdata",async function(req,res){
 
     // const data={
     //     Frist_name:"hello",
