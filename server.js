@@ -68,6 +68,11 @@ app.get("/ll",async function(){
     const a=await Usertoken.find()
     return res.send(a)
 })
+
+app.get("/show",async function(){
+  //  const a=await Usertoken.find()
+    return res.send("ok fine")
+})
 app.listen(1212,async function(){
     await connectDB()
   console.log("connected")
