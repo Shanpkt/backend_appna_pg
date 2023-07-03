@@ -64,12 +64,12 @@ if(userdata==null)
   
 })
 
-app.get("/ll",async function(){
+app.get("/ll",async function(req,res){
     const a=await Usertoken.find()
     return res.send(a)
 })
 
-app.get("/show",async function(){
+app.get("/show",async function(req,res){
   //  const a=await Usertoken.find()
     return res.send("ok fine")
 })
