@@ -9,32 +9,62 @@ const app=express()
 app.use(express.json());
 app.use(
     cors({
-        origin:"https://appna-pg.vercel.app"
+        origin:"http://localhost:3000"
     })
 )
 
-app.get("/userdata",async function(req,res){
+app.post("/userdata",async function(req,res){
 
-    // const data={
-    //     Frist_name:"hello",
-    // Last_name:"hello",
-    // Email:"hello",
-    // Year:"1998",
-    // Phone:1234456, 
-    // Password:"shant", 
-    // saved_pg:[],
-    // reffrals:[]
-    // }
+    const data={
+        First_name:req.body.First_name,
+    Last_name:req.body.Last_name,
+    Email:req.body.Email,
+    Year:req.body.Year,
+    Phone:1234567, 
+    Password:req.body.Password, 
+    saved_pg:[],
+    reffrals:[]
+    }
+   const userdata=await UserSchema.create(data)
 
-  // const userdata=await UserSchema.create(req.body)
-   // return res.send(userdata)
-  // console.log(userdata)
-    
-    return res.send("working fine")
+   if(userdata==null){
+    const respons={
+        data:userdata,
+        status:"Fail"
+      }
+    return res.send(respons)
+   }
+
+   const respons={
+     data:userdata,
+     status:"400"
+   }
+   return res.send(respons)
 
 })
 
-app.get("/ll",async function(req,res){
+
+app.get("/userdata/:id",async function(req,res){
+
+   const userdata=await UserSchema.findOne({Email:{$eq:req.params.id}})
+   const respons={
+    data:userdata,
+    status:"400"
+  }
+
+if(userdata==null)
+{
+    const respons={
+        data:userdata,
+        status:"200"
+      }
+      return res.send(respons)
+}
+  return res.send(respons)
+  
+})
+
+app.get("/ll",async function(){
     const a=await Usertoken.find()
     return res.send(a)
 })
