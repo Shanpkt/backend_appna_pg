@@ -9,7 +9,7 @@ const uri="mongodb+srv://vercel-admin-user:p3vxxZ4UnDJhskAx@cluster0.cmbuxv1.mon
 const connectDB=()=>{
 
 
-    return mongoose.connect(process.env.MONGODB,{
+    return mongoose.connect(process.env.MONGODB_URI,{
 
       
       useNewUrlParser: true,
