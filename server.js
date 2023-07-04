@@ -71,7 +71,7 @@ app.get("/ll",async function(req,res){
 
 app.get("/show",async function(req,res){
   //  const a=await Usertoken.find()
-    return res.send("ok fine")
+    return res.send("okppppppppppppppppp fine")
 })
 app.listen(1212,async function(){
     await connectDB()
