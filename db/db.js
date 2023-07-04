@@ -2,7 +2,7 @@
 
 const mongoose=require('mongoose')
 
-const uri="mongodb+srv://vercel-admin-user:p3vxxZ4UnDJhskAx@cluster0.cmbuxv1.mongodb.net/sample_analytics?retryWrites=true&w=majority"
+const uri="mongodb+srv://vercel-admin-user:p3vxxZ4UnDJhskAx@cluster0.cmbuxv1.mongodb.net/appna_pg?retryWrites=true&w=majority"
 
 
                         
