@@ -9,7 +9,7 @@ const app=express()
 app.use(express.json());
 app.use(
     cors({
-        origin:"https://appna-pg.vercel.app/"
+        origin:"https://appna-pg.vercel.app"
     })
 )
 
