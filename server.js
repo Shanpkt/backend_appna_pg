@@ -71,7 +71,7 @@ app.get("/ll",async function(req,res){
 
 app.get("/show",async function(req,res){
     const a=await UserSchema.find()
-    return res.send(a)
+    return res.send("nahi re")
 })
 app.listen(1212,async function(){
     await connectDB()
