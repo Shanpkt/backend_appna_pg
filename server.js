@@ -9,7 +9,7 @@ const app=express()
 app.use(express.json());
 app.use(
     cors({
-        origin:"http://localhost:3001"
+        origin:"http://localhost:3000"
     })
 )
 
@@ -70,8 +70,8 @@ app.get("/ll",async function(req,res){
 })
 
 app.get("/show",async function(req,res){
-  //  const a=await Usertoken.find()
-    return res.send("okppppppppppppppppp fine")
+    const a=await UserSchema.find()
+    return res.send(a)
 })
 app.listen(1212,async function(){
     await connectDB()
