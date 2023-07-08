@@ -47,20 +47,21 @@ app.post("/userdata",async function(req,res){
 app.get("/userdata/:id",async function(req,res){
 
    const userdata=await UserSchema.findOne({Email:{$eq:req.params.id}})
-   const respons={
-    data:userdata,
-    status:"400"
-  }
+//    const respons={
+//     data:userdata,
+//     status:"400"
+//   }
 
-if(userdata==null)
-{
-    const respons={
-        data:userdata,
-        status:"200"
-      }
-      return res.send(respons)
-}
-  return res.send(respons)
+// if(userdata==null)
+// {
+//     const respons={
+//         data:userdata,
+//         status:"200"
+//       }
+//       return res.send(respons)
+
+// }
+  return res.send(userdata)
   
 })
 
